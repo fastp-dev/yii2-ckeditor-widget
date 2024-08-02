@@ -64,6 +64,9 @@ class CKEditor extends InputWidget
 
         $js[] = "CKEDITOR.replace('$id', $options);";
         $js[] = "dosamigos.ckEditorWidget.registerOnChangeHandler('$id');";
+        $js[] = "CKEDITOR.editorConfig = function( config ) {
+    config.versionCheck = false;
+};";
 
         if (isset($this->clientOptions['filebrowserUploadUrl']) || isset($this->clientOptions['filebrowserImageUploadUrl'])) {
             $js[] = "dosamigos.ckEditorWidget.registerCsrfImageUploadHandler();";
