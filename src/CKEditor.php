@@ -59,7 +59,7 @@ class CKEditor extends InputWidget
         $id = $this->options['id'];
 
         $options = $this->clientOptions !== false && !empty($this->clientOptions)
-            ? Json::encode($this->clientOptions)
+            ? Json::encode(array_merge($this->clientOptions, ['versionCheck' => false,]))
             : '{}';
 
         $js[] = "CKEDITOR.replace('$id', $options);";
