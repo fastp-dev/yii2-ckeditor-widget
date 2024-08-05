@@ -100,7 +100,9 @@ trait CKEditorTrait
             $this->registerKCFinder();
         }
 
-        $options = [];
+        $options = [
+            'versionCheck' => false,
+        ];
         switch ($this->preset) {
             case 'custom':
                 $preset = null;
